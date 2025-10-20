@@ -1,0 +1,26 @@
+@baseUrl = http://localhost:5140 
+
+### Cadastrar Consumo Mensal
+POST {{baseUrl}}/api/consumo/cadastrar
+Content-Type: application/json
+
+{
+  "cpf": "123.456.789-00",
+  "mes": 10,
+  "ano": 2022,
+  "m3Consumidos": 37.5,
+  "bandeira": "Vermelho",
+  "possuiEsgoto": true
+}
+
+### Listar Todos os Registros
+GET {{baseUrl}}/api/consumo/listar
+
+### Listar Registro Especifico
+GET {{baseUrl}}/api/consumo/buscar/123.456.789-00/10/2025
+
+### Listar Registro Especifico
+DELETE {{baseUrl}}/api/consumo/remover/123.456.789-00/10/2025
+
+### Listar Total das Contas
+GET {{baseUrl}}/api/consumo/total-geral
